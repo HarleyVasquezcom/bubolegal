@@ -1313,6 +1313,18 @@ img {
 @media (max-width: 1024px) {
   .hero .container {
     grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero .container .image {
+    order: -1;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .hero-text {
+    order: 1;
   }
 
   .hero-image {
