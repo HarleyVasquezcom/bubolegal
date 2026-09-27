@@ -1496,3 +1496,16 @@ img {
   background: var(--gold);
   transform: scale(1.2);
 }
+
+.about-slide-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.7) 70%, transparent 100%);
+  color: #e0e0e0;
+  padding: 16px 20px 20px 20px;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  border-bottom: 2px solid var(--gold);
+}
