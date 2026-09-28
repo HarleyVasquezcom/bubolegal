@@ -1316,16 +1316,57 @@ img {
     grid-template-columns: 1fr;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .hero .container .image {
     order: -1;
-    margin-bottom: 24px;
+    margin: 0 auto 24px auto;
     text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero .container .image img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    margin: 0 auto;
   }
 
   .hero-text {
     order: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    width: 100%;
+    text-align: center;
   }
 
   .hero-image {
