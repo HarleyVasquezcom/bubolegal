@@ -1333,6 +1333,10 @@ img {
     order: -1;
   }
 
+  .hero-bg-image {
+    background-position: left center !important;
+  }
+
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
