@@ -280,23 +280,23 @@ img {
 
 /* HERO */
 .hero {
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
-  align-items: center;
+  align-items: left;
   position: relative;
   background: linear-gradient(135deg, var(--black) 0%, #1a1a1a 50%, var(--black-3) 100%);
   overflow: hidden;
 }
 
 .hero-overlay {
-  position: absolute;
+  position: relative;
   inset: 0;
   background: radial-gradient(ellipse at 30% 50%, rgba(201, 168, 76, 0.05) 0%, transparent 60%);
   pointer-events: none;
 }
 
 .hero-pattern {
-  position: absolute;
+  position: relative;
   inset: 0;
   background-image:
     linear-gradient(rgba(201, 168, 76, 0.03) 1px, transparent 1px),
@@ -318,7 +318,7 @@ img {
 
 .hero-badge {
   display: inline-flex;
-  align-items: center;
+  align-items: left;
   gap: 8px;
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -402,7 +402,7 @@ img {
 }
 
 .hero-image-overlay {
-  position: absolute;
+  position: relative;
   inset: 0;
   border: 1px solid rgba(0, 0, 0, 0.0);
   border-radius: 4px;
@@ -410,7 +410,7 @@ img {
 }
 
 .hero-image-accent {
-  position: absolute;
+  position: relative;
   bottom: -20px;
   right: -20px;
   width: 120px;
