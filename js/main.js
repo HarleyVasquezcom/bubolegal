@@ -245,3 +245,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// SERVICE WORKER REGISTRATION & PWA INSTALL PROMPT
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    const swPath = window.location.pathname.includes('/pages/')
+      ? (window.location.pathname.includes('/blog/') ? '../../sw.js' : '../sw.js')
+      : 'sw.js';
+    navigator.serviceWorker.register(swPath).catch(err => {
+      console.log('SW registration failed:', err);
+    });
+  });
+}
+
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  const navLinks = document.querySelector('.nav-links');
+  if (navLinks && !document.getElementById('pwa-install-btn-nav')) {
+    const li = document.createElement('li');
+    const btn = document.createElement('button');
+    btn.id = 'pwa-install-btn-nav';
+    btn.className = 'nav-cta';
+    btn.style.cssText = 'background: transparent; border: 1px solid var(--gold); color: var(--gold); cursor: pointer; display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; font-size: 0.85rem;';
+    btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Instalar App`;
+
+    btn.addEventListener('click', async () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+          li.remove();
+        }
+        deferredPrompt = null;
+      }
+    });
+
+    li.appendChild(btn);
+    navLinks.appendChild(li);
+  }
+});
