@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// CONTACT FORM ASYNC SUBMISSION WITH FORMSUBMIT
+// CONTACT FORM ASYNC SUBMISSION WITH FORMSPREE
 document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
